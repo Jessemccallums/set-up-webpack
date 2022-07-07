@@ -1,56 +1,39 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To do list
 
-> Description the project.
-
+> this is a project from Microverse curriculum where you can add the task of your day in a interactive way, you can add and remove you task from the list and also rename it.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- HTML
+- CSS
+- JAVACRIPT ES6 
+- WEBPACK
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+Use it with a text editor and Use git and github and a browser.
+
 ### Setup
+
+Use it with a new branch, this is the basic commands that you could use: (git add . ) (git commit -m "bla, bla") (git push)
 
 ### Install
 
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+Install linters in order to use it.
 
 ## Authors
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@jessemccallums](https://github.com/Jessemccallums)
+- Twitter: [@mccallumshope](https://twitter.com/mccallumshope)
+- LinkedIn: [Jesse McCallums](https://www.linkedin.com/in/jesse-mccallums-7225a4237/)
 
 ## 🤝 Contributing
 
