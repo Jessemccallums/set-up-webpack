@@ -91,32 +91,6 @@ const List = () => {
       localStorage.setItem('list', JSON.stringify(empty));
     });
 
-    threeDots.addEventListener('click', () => {
-      const editInput = document.createElement('input');
-      editInput.type = 'text';
-      editInput.className = 'listContent';
-      editInput.style.backgroundColor = '#fffed3';
-      list.style.backgroundColor = '#fffed3';
-      editInput.value = listText.textContent;
-      list.replaceChild(editInput, listText);
-      editInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' && editInput.value) {
-          const getting = JSON.parse(localStorage.getItem('list'));
-          const result = getting.filter((word) => word.description === listText.textContent);
-          const empty = [];
-          for (let i = 0; i < getting.length; i += 1) {
-            if (getting[i].index === result[0].index) {
-              getting[i].description = editInput.value;
-            }
-            empty.push(getting[i]);
-            localStorage.setItem('list', JSON.stringify(empty));
-          }
-          list.replaceChild(listText, editInput);
-          listText.textContent = editInput.value;
-          list.style.backgroundColor = '#fff';
-        }
-      });
-    });
   };
 
   // Entering list event
