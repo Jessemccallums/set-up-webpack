@@ -90,7 +90,6 @@ const List = () => {
       }
       localStorage.setItem('list', JSON.stringify(empty));
     });
-
   };
 
   // Entering list event
