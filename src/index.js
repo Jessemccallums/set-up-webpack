@@ -1,4 +1,4 @@
 import './style.css';
-import list from './develop.js';
+import list from './develop';
 
 list();
