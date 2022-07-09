@@ -39,7 +39,7 @@ const List = () => {
     trashIcon.className = 'fas fa-trash-alt icon2';
     list.append(checkboxes, listText, threeDots, trashIcon);
     // Add event to checkboxes
-    // let count = 1;
+   let count = 1;
     checkboxes.addEventListener('click', () => {
       threeDots.classList.toggle('remove-icon-active');
       trashIcon.classList.toggle('icon2');
@@ -51,9 +51,9 @@ const List = () => {
       for (let i = 0; i < getting.length; i += 1) {
         if (hammasi[i].classList.contains('changeBg')) {
           getting[i].completed = true;
-          // count += 1;
+         count += 1;
         } else {
-          getting[i].completed = false;
+         getting[i].completed = false;
         }
         empty.push(getting[i]);
         localStorage.setItem('list', JSON.stringify(empty));
@@ -69,7 +69,7 @@ const List = () => {
       const empty = [];
       for (let i = 0; i < getting.length; i += 1) {
         if (getting[i].completed === true) {
-          // continue;
+          continue;
         }
         empty.push(getting[i]);
       }
