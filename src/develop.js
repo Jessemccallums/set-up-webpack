@@ -1,6 +1,4 @@
 const List = () => {
-// import adder from './functions.js';
-
   class Template {
     constructor(description, completed, index) {
       this.description = description;
@@ -17,7 +15,7 @@ const List = () => {
   const section = document.querySelector('section');
   section.innerHTML = `
   <div class="main-version">
-    <p id="topheader">Today's To Do <i class="fas fa-sync"></i></p>
+    <p id="header">Today's To Do <i class="fas fa-sync"></i></p>
     <form class="form">
       <input class="dataEntry" type="text" placeholder="Add to your list..." required></input>
     </form>
@@ -41,7 +39,7 @@ const List = () => {
     trashIcon.className = 'fas fa-trash-alt icon2';
     list.append(checkboxes, listText, threeDots, trashIcon);
     // Add event to checkboxes
-    let count = 1; // eslint-disable-line
+    // let count = 1;
     checkboxes.addEventListener('click', () => {
       threeDots.classList.toggle('remove-icon-active');
       trashIcon.classList.toggle('icon2');
@@ -53,7 +51,7 @@ const List = () => {
       for (let i = 0; i < getting.length; i += 1) {
         if (hammasi[i].classList.contains('changeBg')) {
           getting[i].completed = true;
-          count += 1;
+          // count += 1;
         } else {
           getting[i].completed = false;
         }
@@ -71,7 +69,7 @@ const List = () => {
       const empty = [];
       for (let i = 0; i < getting.length; i += 1) {
         if (getting[i].completed === true) {
-          continue; // eslint-disable-line
+          // continue;
         }
         empty.push(getting[i]);
       }
@@ -86,11 +84,38 @@ const List = () => {
       const empty = [];
       for (let i = 0; i < getFromLocalStorage.length; i += 1) {
         if (result[0].description === getFromLocalStorage[i].description) {
-          continue;  // eslint-disable-line
+          continue;// eslint-disable-line
         }
         empty.push(getFromLocalStorage[i]);
       }
       localStorage.setItem('list', JSON.stringify(empty));
+    });
+
+    threeDots.addEventListener('click', () => {
+      const editInput = document.createElement('input');
+      editInput.type = 'text';
+      editInput.className = 'listContent';
+      editInput.style.backgroundColor = '#fffed3';
+      list.style.backgroundColor = '#fffed3';
+      editInput.value = listText.textContent;
+      list.replaceChild(editInput, listText);
+      editInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && editInput.value) {
+          const getting = JSON.parse(localStorage.getItem('list'));
+          const result = getting.filter((word) => word.description === listText.textContent);
+          const empty = [];
+          for (let i = 0; i < getting.length; i += 1) {
+            if (getting[i].index === result[0].index) {
+              getting[i].description = editInput.value;
+            }
+            empty.push(getting[i]);
+            localStorage.setItem('list', JSON.stringify(empty));
+          }
+          list.replaceChild(listText, editInput);
+          listText.textContent = editInput.value;
+          list.style.backgroundColor = '#fff';
+        }
+      });
     });
   };
 
